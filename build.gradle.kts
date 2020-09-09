@@ -18,9 +18,12 @@ dependencies {
     compileOnly(spigot("1.16.2"))
 }
 
+val shade = configurations.create("shade")
+shade.extendsFrom(configurations.implementation.get())
+
 tasks.jar {
     from(
-        configurations.runtime.get().map {
+        shade.map {
             if (it.isDirectory)
                 it
             else
@@ -30,7 +33,7 @@ tasks.jar {
 }
 
 spigot {
-    apiVersion = "1.16"
+    apiVersion = "1.15"
     commands {
         create("test1")
         create("test2")
