@@ -21,8 +21,10 @@ class KotlinGuidePlugin : JavaPlugin(), Listener {
 
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (label == "test1") {
-            if (args.isEmpty())
+            if (args.isEmpty()){
                 sender.sendMessage("Hello")
+                return true
+            }
 
             when (args[0]) {
                 "a" -> sender.sendMessage("You entered a")
