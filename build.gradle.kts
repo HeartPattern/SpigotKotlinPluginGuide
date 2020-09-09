@@ -15,7 +15,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
 
-    compileOnly(spigot("1.16.2"))
+    compileOnly(spigot("1.15.2"))
 }
 
 val shade = configurations.create("shade")
